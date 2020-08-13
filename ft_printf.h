@@ -6,7 +6,7 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 10:26:56 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/13 16:08:21 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/13 16:24:04 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ typedef struct {
 
 int					ft_printf(const char *fmt, ...);
 void				set_zero_minus_flag(t_flags *flags, char **fmt);
-void				set_width(t_flags *flags, char *fmt);
+void				set_width(t_flags *flags, char **fmt);
 void				set_width_asterisk
-					(t_flags *flags, char *fmt, va_list argptr);
+					(t_flags *flags, char **fmt, va_list argptr);
 void				set_precision_flag(t_flags *flags);
-void				set_precision(t_flags *flags, char *fmt);
+void				set_precision(t_flags *flags, char **fmt);
 void				set_precision_asterisk
-					(t_flags *flags, char *fmt, va_list argptr);
-void				parse_type(t_flags *flags, char *fmt);
+					(t_flags *flags, char **fmt, va_list argptr);
+void				parse_type(t_flags *flags, char **fmt);
 #endif

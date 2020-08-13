@@ -6,7 +6,7 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 10:23:55 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/13 16:01:37 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/13 16:31:24 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,20 +45,20 @@ int			ft_printf(const char *fmt, ...)
 
 static void	parse_fmt(t_flags *flags, char *fmt, va_list argptr)
 {
-	set_zero_minus_flag(flags, fmt);
+	set_zero_minus_flag(flags, &fmt);
 	if (is_from1to9(*fmt) == 1)
-		set_width(flags, fmt);
+		set_width(flags, &fmt);
 	else if (*fmt == '*')
-		set_width_asterisk(flags, fmt, argptr);
+		set_width_asterisk(flags, &fmt, argptr);
 	if (*fmt == '.')
 	{
 		set_precision_flag(flags);
 		if (is_from0to9(*fmt) == 1)
-			set_precision(flags, fmt);
+			set_precision(flags, &fmt);
 		else if (*fmt == '*')
-			set_precision_asterisk(flags, fmt, argptr);
+			set_precision_asterisk(flags, &fmt, argptr);
 	}
-	parse_type(flags, fmt);
+	parse_type(flags, &fmt);
 }
 
 static void	init_flags(t_flags *flags)
