@@ -6,7 +6,7 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 10:23:55 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/13 16:31:24 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/13 16:49:20 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static void	parse_fmt(t_flags *flags, char *fmt, va_list argptr)
 		set_width_asterisk(flags, &fmt, argptr);
 	if (*fmt == '.')
 	{
-		set_precision_flag(flags);
+		set_precision_flag(flags, &fmt);
 		if (is_from0to9(*fmt) == 1)
 			set_precision(flags, &fmt);
 		else if (*fmt == '*')
