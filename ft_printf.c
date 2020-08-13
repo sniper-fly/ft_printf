@@ -6,7 +6,7 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 10:23:55 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/13 12:20:50 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/13 16:01:37 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include "ft_printf.h"
 
-static void	init_flags(void *ptr, size_t size);
+static void	init_flags(t_flags *flags);
 static int	is_from0to9(char num);
 static int	is_from1to9(char num);
 static void	parse_fmt(t_flags *flags, char *fmt, va_list argptr);
@@ -22,25 +22,25 @@ static void	parse_fmt(t_flags *flags, char *fmt, va_list argptr);
 int			ft_printf(const char *fmt, ...)
 {
 	va_list	argptr;
-	t_flags	*flags;
+	t_flags	flags;
 
 	va_start(argptr, fmt);
-	init_flags(flags, sizeof(t_flags));
+	init_flags(&flags);
 	while (*fmt)
 	{
 		if (*fmt == '%')
 		{
-			parse_fmt(flags, fmt, argptr);
+			parse_fmt(&flags, fmt, argptr);
 		}
 		else
 		{
 			ft_putchar_fd(*fmt, 1);
-			flags->total_output_len++;
+			flags.total_output_len++;
 			fmt++;
 		}
 	}
 	va_end(argptr);
-	return (flags->total_output_len);
+	return (flags.total_output_len);
 }
 
 static void	parse_fmt(t_flags *flags, char *fmt, va_list argptr)
@@ -61,9 +61,14 @@ static void	parse_fmt(t_flags *flags, char *fmt, va_list argptr)
 	parse_type(flags, fmt);
 }
 
-static void	init_flags(void *ptr, size_t size)
+static void	init_flags(t_flags *flags)
 {
-	ft_bzero(ptr, size);
+	flags->fill_zero_flag = 0;
+	flags->minus_flag = 0;
+	flags->width = 0;
+	flags->precision_exsistence = 0;
+	flags->precision = 0;
+	flags->total_output_len = 0;
 }
 
 static int	is_from1to9(char num)
