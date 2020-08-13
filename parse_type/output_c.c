@@ -6,12 +6,11 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 12:04:53 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/13 18:46:51 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/13 22:06:12 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-#include <unistd.h>
 
 void				output_c(t_flags *flags, va_list argptr)
 {

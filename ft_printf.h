@@ -6,7 +6,7 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 10:26:56 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/13 18:39:10 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/13 22:04:18 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # define MAX(x, y) (x >= y ? x : y)
 
 # include <stdarg.h>
+# include <stddef.h>
+# include <unistd.h>
 # include "./libft/libft.h"
 
 typedef struct {
