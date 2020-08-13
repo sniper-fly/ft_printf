@@ -6,7 +6,7 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 10:23:55 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/13 18:00:28 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/13 18:30:34 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int			ft_printf(const char *fmt, ...)
 	t_flags	flags;
 
 	va_start(argptr, fmt);
+	init_flags(&flags);
+	flags.total_output_len = 0;
 	while (*fmt)
 	{
 		if (*fmt == '%')
@@ -58,9 +60,10 @@ static void	parse_fmt(t_flags *flags, char *fmt, va_list argptr)
 		else if (*fmt == '*')
 			set_precision_asterisk(flags, &fmt, argptr);
 	}
-	parse_type(flags, &fmt);
+	parse_type(flags, &fmt, argptr);
 }
 
+//total_output_length以外を0で初期化する
 static void	init_flags(t_flags *flags)
 {
 	flags->fill_zero_flag = 0;
@@ -68,7 +71,6 @@ static void	init_flags(t_flags *flags)
 	flags->width = 0;
 	flags->precision_exsistence = 0;
 	flags->precision = 0;
-	flags->total_output_len = 0;
 }
 
 static int	is_from1to9(char num)
