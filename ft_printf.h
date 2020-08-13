@@ -6,7 +6,7 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 10:26:56 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/13 17:56:40 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/13 18:39:10 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,15 @@ void				set_precision_flag(t_flags *flags, char **fmt);
 void				set_precision(t_flags *flags, char **fmt);
 void				set_precision_asterisk
 					(t_flags *flags, char **fmt, va_list argptr);
-void				parse_type(t_flags *flags, char **fmt);
-void				output_c(t_flags *flags, char **fmt);
-void				output_s(t_flags *flags, char **fmt);
-void				output_p(t_flags *flags, char **fmt);
-void				output_di(t_flags *flags, char **fmt);
-void				output_u(t_flags *flags, char **fmt);
-void				output_x(t_flags *flags, char **fmt);
-void				output_X(t_flags *flags, char **fmt);
-void				output_percent(t_flags *flags, char **fmt);
+void				parse_type(t_flags *flags, char **fmt, va_list argptr);
+void				output_c(t_flags *flags, va_list argptr);
+void				output_s(t_flags *flags, va_list argptr);
+void				output_p(t_flags *flags, va_list argptr);
+void				output_di(t_flags *flags,va_list argptr);
+void				output_u(t_flags *flags, va_list argptr);
+void				output_x(t_flags *flags, va_list argptr);
+void				output_X(t_flags *flags, va_list argptr);
+void				output_percent(t_flags *flags, va_list argptr);
+void				put_it_xx_times(char ch, int times);
 
 #endif
