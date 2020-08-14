@@ -6,7 +6,7 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 10:23:55 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/13 22:54:00 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/14 10:39:05 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 static void	init_flags(t_flags *flags);
 static int	is_from0to9(char num);
 static int	is_from1to9(char num);
-static void	parse_fmt(t_flags *flags, char *fmt, va_list argptr);
+static void	parse_fmt(t_flags *flags, char **fmt, va_list argptr);
 
 int			ft_printf(const char *fmt, ...)
 {
@@ -33,7 +33,7 @@ int			ft_printf(const char *fmt, ...)
 		{
 			init_flags(&flags);
 			fmt++;
-			parse_fmt(&flags, fmt, argptr);
+			parse_fmt(&flags, &fmt, argptr);
 		}
 		else
 		{
@@ -46,22 +46,22 @@ int			ft_printf(const char *fmt, ...)
 	return (flags.total_output_len);
 }
 
-static void	parse_fmt(t_flags *flags, char *fmt, va_list argptr)
+static void	parse_fmt(t_flags *flags, char **fmt, va_list argptr)
 {
-	set_zero_minus_flag(flags, &fmt);
-	if (is_from1to9(*fmt) == 1)
-		set_width(flags, &fmt);
-	else if (*fmt == '*')
-		set_width_asterisk(flags, &fmt, argptr);
-	if (*fmt == '.')
+	set_zero_minus_flag(flags, fmt);
+	if (is_from1to9(**fmt) == 1)
+		set_width(flags, fmt);
+	else if (**fmt == '*')
+		set_width_asterisk(flags, fmt, argptr);
+	if (**fmt == '.')
 	{
-		set_precision_flag(flags, &fmt);
-		if (is_from0to9(*fmt) == 1)
-			set_precision(flags, &fmt);
-		else if (*fmt == '*')
-			set_precision_asterisk(flags, &fmt, argptr);
+		set_precision_flag(flags, fmt);
+		if (is_from0to9(**fmt) == 1)
+			set_precision(flags, fmt);
+		else if (**fmt == '*')
+			set_precision_asterisk(flags, fmt, argptr);
 	}
-	parse_type(flags, &fmt, argptr);
+	parse_type(flags, fmt, argptr);
 }
 
 //total_output_length以外を0で初期化する
