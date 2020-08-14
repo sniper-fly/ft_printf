@@ -6,11 +6,13 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 12:05:26 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/14 10:49:43 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/14 11:00:55 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
+static void			output_s2(t_flags *flags, int actual_strlen,
+								int actual_width, char *str);
 
 void				output_s(t_flags *flags, va_list argptr)
 {
@@ -27,6 +29,12 @@ void				output_s(t_flags *flags, va_list argptr)
 		actual_strlen = ft_strlen(str);
 	actual_width = MAX(actual_strlen, flags->width);
 	flags->total_output_len += actual_width;
+	output_s2(flags, actual_strlen, actual_width, str);
+}
+
+static void			output_s2(t_flags *flags, int actual_strlen,
+								int actual_width, char *str)
+{
 	if (flags->minus_flag == 1)
 	{
 		write(1, str, actual_strlen);

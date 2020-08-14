@@ -5,9 +5,11 @@
 int		main(void)
 {
 	int len;
-	len = ft_printf("[%0*.*s]", -10, -3, "abcd");
+	int len2;
+
+	len = ft_printf("[%0*.*s]", 10, 3, NULL);
 	printf("\n");
-	len = printf("[%0*.*s]", -10, -3, "abcd");
+	len2 = printf("[%0*.*s]", -10, 3, NULL);
 	// printf("[%*c]", 10, ' ');
 	printf("\n");
 	printf("%d", len);
