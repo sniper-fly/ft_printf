@@ -6,7 +6,7 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 10:26:56 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/13 22:04:18 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/14 11:17:47 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,15 @@ typedef struct {
 
 
 int					ft_printf(const char *fmt, ...);
-void				set_zero_minus_flag(t_flags *flags, char **fmt);
-void				set_width(t_flags *flags, char **fmt);
+void				set_zero_minus_flag(t_flags *flags, const char **fmt);
+void				set_width(t_flags *flags, const char **fmt);
 void				set_width_asterisk
-					(t_flags *flags, char **fmt, va_list argptr);
-void				set_precision_flag(t_flags *flags, char **fmt);
-void				set_precision(t_flags *flags, char **fmt);
+					(t_flags *flags, const char **fmt, va_list argptr);
+void				set_precision_flag(t_flags *flags, const char **fmt);
+void				set_precision(t_flags *flags, const char **fmt);
 void				set_precision_asterisk
-					(t_flags *flags, char **fmt, va_list argptr);
-void				parse_type(t_flags *flags, char **fmt, va_list argptr);
+					(t_flags *flags, const char **fmt, va_list argptr);
+void				parse_type(t_flags *flags, const char **fmt, va_list argptr);
 void				output_c(t_flags *flags, va_list argptr);
 void				output_s(t_flags *flags, va_list argptr);
 void				output_p(t_flags *flags, va_list argptr);

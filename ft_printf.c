@@ -6,7 +6,7 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 10:23:55 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/14 10:39:05 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/14 11:16:38 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 static void	init_flags(t_flags *flags);
 static int	is_from0to9(char num);
 static int	is_from1to9(char num);
-static void	parse_fmt(t_flags *flags, char **fmt, va_list argptr);
+static void	parse_fmt(t_flags *flags, const char **fmt, va_list argptr);
 
 int			ft_printf(const char *fmt, ...)
 {
@@ -46,7 +46,7 @@ int			ft_printf(const char *fmt, ...)
 	return (flags.total_output_len);
 }
 
-static void	parse_fmt(t_flags *flags, char **fmt, va_list argptr)
+static void	parse_fmt(t_flags *flags, const char **fmt, va_list argptr)
 {
 	set_zero_minus_flag(flags, fmt);
 	if (is_from1to9(**fmt) == 1)

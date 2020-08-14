@@ -6,13 +6,13 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 12:04:10 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/13 17:45:19 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/14 11:20:21 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void				set_precision(t_flags *flags, char **fmt)
+void				set_precision(t_flags *flags, const char **fmt)
 {
 	int		total;
 

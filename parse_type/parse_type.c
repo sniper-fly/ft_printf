@@ -6,13 +6,13 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 12:03:40 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/13 18:32:36 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/14 11:18:25 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void				parse_type(t_flags *flags, char **fmt, va_list argptr)
+void				parse_type(t_flags *flags, const char **fmt, va_list argptr)
 {
 	if (**fmt == 'c')
 		output_c(flags, argptr);
