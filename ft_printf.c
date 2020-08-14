@@ -6,7 +6,7 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 10:23:55 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/13 18:30:34 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/13 22:54:00 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int			ft_printf(const char *fmt, ...)
 		if (*fmt == '%')
 		{
 			init_flags(&flags);
+			fmt++;
 			parse_fmt(&flags, fmt, argptr);
 		}
 		else

@@ -6,7 +6,15 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 12:07:23 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/13 12:07:24 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/13 22:37:54 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+
+#include "../ft_printf.h"
+
+void				output_u(t_flags *flags, va_list argptr)
+{
+	;
+}

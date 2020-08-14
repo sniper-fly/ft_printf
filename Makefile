@@ -1,6 +1,7 @@
 
 # find . -type f -name *.c | grep -v git | grep -v lst |
 #  awk '{print $0 " \\";}' >> Makefile
+#このコマンドだとft_isdigitが抜けてしまう
 SRCS	=	./libft/ft_strchr.c \
 			./libft/ft_split.c \
 			./libft/ft_strtrim.c \
@@ -10,6 +11,7 @@ SRCS	=	./libft/ft_strchr.c \
 			./libft/ft_isprint.c \
 			./libft/ft_atoi.c \
 			./libft/ft_strdup.c \
+			./libft/ft_isdigit.c \
 			./libft/ft_tolower.c \
 			./libft/ft_toupper.c \
 			./libft/ft_substr.c \
@@ -54,8 +56,8 @@ SRCS	=	./libft/ft_strchr.c \
 OBJS	=	$(SRCS:%.c=%.o)
 NAME	=	libftprintf.a
 CC		=	gcc
+CFLAGS	=	-g
 # CFLAGS	=	
-RM		=	rm -f
 
 all:		$(NAME)
 
@@ -63,10 +65,10 @@ $(NAME):	$(OBJS)
 	ar rc $(NAME) $(OBJS)
 
 clean:
-	rm $(OBJS)
+	rm -f $(OBJS)
 
 fclean:		clean
-	rm $(NAME)
+	rm -f $(NAME)
 
 re:			fclean all
 
