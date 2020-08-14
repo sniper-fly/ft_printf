@@ -6,7 +6,7 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 12:05:26 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/13 22:04:22 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/14 10:49:43 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void				output_s(t_flags *flags, va_list argptr)
 	else
 		actual_strlen = ft_strlen(str);
 	actual_width = MAX(actual_strlen, flags->width);
+	flags->total_output_len += actual_width;
 	if (flags->minus_flag == 1)
 	{
 		write(1, str, actual_strlen);
