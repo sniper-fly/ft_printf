@@ -6,7 +6,7 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 12:04:53 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/13 22:06:12 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/14 10:22:11 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 void				output_c(t_flags *flags, va_list argptr)
 {
 	int		actual_width;
-	char	ch;
+	int		ch;
 
-	ch = va_arg(argptr, char);
+	ch = va_arg(argptr, int);
 	actual_width = MAX(1, flags->width);
 	flags->total_output_len += actual_width;
 	if (flags->minus_flag == 1)
