@@ -4,14 +4,13 @@
 
 int		main(void)
 {
-	// int len;
+	int len;
 	int len2;
 
-	// len = ft_printf("[%0**.*s]", -10, 3, NULL);
-	// printf("\n");
-	len2 = printf("[%6.3d]", -3);
-	// printf("[%*c]", 10, ' ');
+	len = ft_printf("[%-6.003d]", -12);
 	printf("\n");
-	printf("%d", len2);
+	len2 = printf("[%-6.003d]", -12);
+	printf("\n");
+	printf("len %d, len2 %d", len, len2);
 	return (0);
 }
