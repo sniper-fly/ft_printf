@@ -6,7 +6,7 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 10:23:55 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/14 11:16:38 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/15 18:12:34 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include "ft_printf.h"
 
-static void	init_flags(t_flags *flags);
+static void	init_flags_except_total_len(t_flags *flags);
 static int	is_from0to9(char num);
 static int	is_from1to9(char num);
 static void	parse_fmt(t_flags *flags, const char **fmt, va_list argptr);
@@ -25,13 +25,13 @@ int			ft_printf(const char *fmt, ...)
 	t_flags	flags;
 
 	va_start(argptr, fmt);
-	init_flags(&flags);
+	init_flags_except_total_len(&flags);
 	flags.total_output_len = 0;
 	while (*fmt)
 	{
 		if (*fmt == '%')
 		{
-			init_flags(&flags);
+			init_flags_except_total_len(&flags);
 			fmt++;
 			parse_fmt(&flags, &fmt, argptr);
 		}
@@ -65,7 +65,7 @@ static void	parse_fmt(t_flags *flags, const char **fmt, va_list argptr)
 }
 
 //total_output_length以外を0で初期化する
-static void	init_flags(t_flags *flags)
+static void	init_flags_except_total_len(t_flags *flags)
 {
 	flags->fill_zero_flag = 0;
 	flags->minus_flag = 0;
