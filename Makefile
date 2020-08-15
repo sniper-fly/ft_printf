@@ -1,8 +1,9 @@
 
-# find . -type f -name *.c | grep -v git | grep -v lst |
+# find . -type f -name *.c | grep -v .git | grep -v lst |
 #  awk '{print $0 " \\";}' >> Makefile
 #このコマンドだとft_isdigitが抜けてしまう
-SRCS	=	./libft/ft_strchr.c \
+SRCS	=	./libft/ft_isdigit.c \
+			./libft/ft_strchr.c \
 			./libft/ft_split.c \
 			./libft/ft_strtrim.c \
 			./libft/ft_bzero.c \
@@ -11,7 +12,6 @@ SRCS	=	./libft/ft_strchr.c \
 			./libft/ft_isprint.c \
 			./libft/ft_atoi.c \
 			./libft/ft_strdup.c \
-			./libft/ft_isdigit.c \
 			./libft/ft_tolower.c \
 			./libft/ft_toupper.c \
 			./libft/ft_substr.c \
@@ -41,6 +41,7 @@ SRCS	=	./libft/ft_strchr.c \
 			./set_precision/set_precision_asterisk.c \
 			./ft_printf.c \
 			./set_zero_minus_flag/set_zero_minus_flag.c \
+			./parse_type/put_num_functions.c \
 			./parse_type/output_s.c \
 			./parse_type/output_di.c \
 			./parse_type/output_u.c \
@@ -50,7 +51,9 @@ SRCS	=	./libft/ft_strchr.c \
 			./parse_type/put_it_xx_times.c \
 			./parse_type/output_p.c \
 			./parse_type/output_c.c \
+			./parse_type/count_digits_functions.c \
 			./set_width/set_width_asterisk.c \
+			./set_width/set_width.c \
 			./set_width/set_width.c \
 
 OBJS	=	$(SRCS:%.c=%.o)
@@ -72,4 +75,4 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY:		all clean fclean 
+.PHONY:		all clean fclean
