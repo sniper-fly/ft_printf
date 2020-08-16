@@ -41,7 +41,8 @@ SRCS	=	./libft/ft_isdigit.c \
 			./set_precision/set_precision_asterisk.c \
 			./ft_printf.c \
 			./set_zero_minus_flag/set_zero_minus_flag.c \
-			./parse_type/put_num_functions.c \
+			./parse_type/put_num_functions1.c \
+			./parse_type/put_num_functions2.c \
 			./parse_type/output_s.c \
 			./parse_type/output_di.c \
 			./parse_type/output_u.c \

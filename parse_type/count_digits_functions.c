@@ -6,14 +6,14 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/14 11:53:42 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/16 12:11:40 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/16 13:48:37 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 #include <limits.h>
 
-int			count_digits_int10(int num)
+int				count_digits_int10(int num)
 {
 	int	digits;
 
@@ -30,7 +30,7 @@ int			count_digits_int10(int num)
 	return (digits);
 }
 
-int			count_digits_u_int10(unsigned int num)
+int				count_digits_u_int10(unsigned int num)
 {
 	int digits;
 
@@ -43,9 +43,22 @@ int			count_digits_u_int10(unsigned int num)
 	return (digits);
 }
 
-int			count_digits_u_int16base(unsigned int num)
+int				count_digits_u_int16base(unsigned int num)
 {
-	int digits;
+	int	digits;
+
+	digits = 1;
+	while (num >= 16)
+	{
+		num /= 16;
+		digits++;
+	}
+	return (digits);
+}
+
+unsigned long	count_digits_u_long16base(unsigned long num)
+{
+	unsigned long	digits;
 
 	digits = 1;
 	while (num >= 16)

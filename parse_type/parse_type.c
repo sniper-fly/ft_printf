@@ -6,7 +6,7 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 12:03:40 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/14 11:18:25 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/16 13:25:39 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ void				parse_type(t_flags *flags, const char **fmt, va_list argptr)
 	else if (**fmt == 'X')
 		output_X(flags, argptr);
 	else if (**fmt == '%')
-		output_percent(flags, argptr);
+		output_percent(flags);
+	else
+		return ;
 	(*fmt)++;
 }
