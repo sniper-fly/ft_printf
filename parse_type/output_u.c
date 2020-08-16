@@ -6,7 +6,7 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 12:07:23 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/15 18:06:55 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/16 12:10:06 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void				output_u(t_flags *flags, va_list argptr)
 	output_u2(flags, num, actual_numlen, actual_width);
 }
 
-void				output_u(t_flags *flags, unsigned int num,
+void				output_u2(t_flags *flags, unsigned int num,
 						int actual_numlen, int actual_width)
 {
 	if (flags->minus_flag)

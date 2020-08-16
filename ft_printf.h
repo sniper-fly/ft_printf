@@ -6,7 +6,7 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 10:26:56 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/15 17:56:55 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/16 12:16:02 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,11 @@ void				output_percent(t_flags *flags, va_list argptr);
 void				put_it_xx_times(char ch, int times);
 int					count_digits_int10(int num);
 int					count_digits_u_int10(unsigned int num);
+int					count_digits_u_int16base(unsigned int num);
 void				put_int10(int num, int precision);
 void				put_u_int10(unsigned int num, int precision);
+void				put_u_int16base(unsigned int num, int precision, char *base);
 void				ft_putnbr_u(unsigned int num);
+void				ft_putnbr_u_16base(unsigned int num, char *base);
 
 #endif

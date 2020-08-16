@@ -6,7 +6,7 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/14 11:53:42 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/15 17:39:44 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/16 12:11:40 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,19 @@ int			count_digits_u_int10(unsigned int num)
 	while (num >= 10)
 	{
 		num /= 10;
+		digits++;
+	}
+	return (digits);
+}
+
+int			count_digits_u_int16base(unsigned int num)
+{
+	int digits;
+
+	digits = 1;
+	while (num >= 16)
+	{
+		num /= 16;
 		digits++;
 	}
 	return (digits);

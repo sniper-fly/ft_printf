@@ -6,7 +6,7 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/15 12:07:46 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/15 17:56:38 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/16 12:55:21 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,18 +50,22 @@ void		put_u_int10(unsigned int num, int precision)
 	ft_putnbr_u(num);
 }
 
+void	ft_putnbr_u_16base(unsigned int num, char *base)
+{
+	if (num < 16)
+	{
+		//"01234567890abcdef"[10] = a
+		ft_putchar_fd(base[num], 1);
+	}
+	else
+	{
+		ft_putnbr_u_16base(num / 16, base);
+		ft_putchar_fd(base[num % 16], 1);
+	}
+}
 
-// #include <stdio.h>
-// int		main(void)
-// {
-// 	ft_putnbr_u(3);
-// 	printf("\n");
-// 	ft_putnbr_u(43);
-// 	printf("\n");
-// 	ft_putnbr_u(-1);
-// 	printf("\n");
-// 	ft_putnbr_u(INT_MAX * 2 + 1);
-// 	printf("\n");
-// 	ft_putnbr_u(UINT_MAX);
-// 	return (0);
-// }
+void		put_u_int16base(unsigned int num, int precision, char *base)
+{
+	put_it_xx_times('0', precision - count_digits_u_int16base(num));
+	ft_putnbr_u_16base(num, base);
+}
