@@ -6,7 +6,7 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 10:26:56 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/16 13:53:36 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/16 14:06:50 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,6 @@ void				put_u_int10(unsigned int num, int precision);
 void				put_u_int16base(unsigned int num, int precision, char *base);
 void				ft_putnbr_u(unsigned int num);
 void				ft_putnbr_u_16base(unsigned int num, char *base);
-void				ft_putnbr_ulong_16base(unsigned long num, char *base);
+void				ft_putnbr_u_long16base(unsigned long num, char *base);
 
 #endif

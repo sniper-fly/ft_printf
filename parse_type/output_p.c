@@ -6,7 +6,7 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 12:07:26 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/16 13:58:05 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/16 14:07:28 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void				output_p(t_flags *flags, va_list argptr)
 	if (flags->minus_flag)
 	{
 		ft_putstr_fd("0x", 1);
-		ft_putnbr_ulong_16base(ptr_address, "0123456789abcdef");
+		ft_putnbr_u_long16base(ptr_address, "0123456789abcdef");
 		put_it_xx_times(' ', actual_width - actual_numlen);
 	}
 	else if (flags->fill_zero_flag)
@@ -38,6 +38,6 @@ void				output_p(t_flags *flags, va_list argptr)
 	{
 		put_it_xx_times(' ', actual_width - actual_numlen);
 		ft_putstr_fd("0x", 1);
-		ft_putnbr_ulong_16base(ptr_address, "0123456789abcdef");
+		ft_putnbr_u_long16base(ptr_address, "0123456789abcdef");
 	}
 }
