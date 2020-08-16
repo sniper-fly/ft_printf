@@ -6,7 +6,7 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 12:07:20 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/16 13:08:15 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/16 15:10:39 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void				output_X(t_flags *flags, va_list argptr)
 	actual_numlen = MAX(count_digits_u_int16base(num), flags->precision);
 	actual_width = MAX(actual_numlen, flags->width);
 	flags->total_output_len += actual_width;
-	output_x2(flags, num, actual_numlen, actual_width);
+	output_X2(flags, num, actual_numlen, actual_width);
 }
 
 static void			output_X2(t_flags *flags, unsigned int num,

@@ -6,11 +6,12 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 12:05:26 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/14 11:00:55 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/16 15:09:37 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
+
 static void			output_s2(t_flags *flags, int actual_strlen,
 								int actual_width, char *str);
 
@@ -24,7 +25,7 @@ void				output_s(t_flags *flags, va_list argptr)
 	if (str == NULL)
 		str = "(null)";
 	if (flags->precision_exsistence == 1)
-		actual_strlen = MIN(ft_strlen(str), flags->precision);
+		actual_strlen = MIN((int)ft_strlen(str), flags->precision);
 	else
 		actual_strlen = ft_strlen(str);
 	actual_width = MAX(actual_strlen, flags->width);

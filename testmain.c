@@ -7,9 +7,9 @@ int		main(void)
 	int len;
 	int len2;
 
-	len = ft_printf("[%0*.*c]", 13, 10, 'a');
+	len = ft_printf("[%0*.4p]", 13, (void*)10);
 	printf("\n");
-	len2 = printf("[%0*.*c]", 13, 10, 'a');
+	len2 = printf("[%0*.4p]", 13, (void*)10);
 	printf("\n");
 	printf("len %d, len2 %d", len, len2);
 	return (0);

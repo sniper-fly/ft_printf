@@ -6,7 +6,7 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 12:07:26 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/16 14:07:28 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/16 15:06:31 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,10 @@ void				output_p(t_flags *flags, va_list argptr)
 		put_it_xx_times(' ', actual_width - actual_numlen);
 	}
 	else if (flags->fill_zero_flag)
+	{
+		flags->total_output_len -= actual_width;
 		return;
+	}
 	else
 	{
 		put_it_xx_times(' ', actual_width - actual_numlen);

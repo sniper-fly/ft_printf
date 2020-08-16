@@ -60,7 +60,7 @@ SRCS	=	./libft/ft_isdigit.c \
 OBJS	=	$(SRCS:%.c=%.o)
 NAME	=	libftprintf.a
 CC		=	gcc
-CFLAGS	=	-g
+CFLAGS	=	-Wall -Wextra -Werror
 # CFLAGS	=	
 
 all:		$(NAME)
