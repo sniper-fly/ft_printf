@@ -6,7 +6,7 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 12:07:23 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/16 12:10:06 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/16 18:28:36 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void				output_u2(t_flags *flags, unsigned int num,
 	}
 	else if (flags->fill_zero_flag)
 	{
-		if (flags->precision_exsistence)
+		if (flags->pre_exist)
 		{
 			put_it_xx_times(' ', actual_width - actual_numlen);
 			put_u_int10(num, flags->precision);

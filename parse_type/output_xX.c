@@ -6,7 +6,7 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 12:07:20 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/16 15:10:39 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/16 18:29:39 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void			output_x2(t_flags *flags, unsigned int num,
 	}
 	else if (flags->fill_zero_flag)
 	{
-		if (flags->precision_exsistence)
+		if (flags->pre_exist)
 		{
 			put_it_xx_times(' ', actual_width - actual_numlen);
 			put_u_int16base(num, flags->precision, "0123456789abcdef");
@@ -81,7 +81,7 @@ static void			output_X2(t_flags *flags, unsigned int num,
 	}
 	else if (flags->fill_zero_flag)
 	{
-		if (flags->precision_exsistence)
+		if (flags->pre_exist)
 		{
 			put_it_xx_times(' ', actual_width - actual_numlen);
 			put_u_int16base(num, flags->precision, "0123456789ABCDEF");

@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   put_num_functions.c                                :+:      :+:    :+:   */
+/*   put_num_functions1.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/15 12:07:46 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/16 12:55:21 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/16 18:12:06 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 #include <limits.h>
 
-void		put_int10(int num, int precision)
+void		put_int10(int num, int pre_exists, int precision)
 {
+	if (num == 0 && pre_exists == 1 && precision == 0)
+		return ;
 	if (num < 0)
 		write(1, "-", 1);
 	put_it_xx_times('0', precision - count_digits_int10(num));

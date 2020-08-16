@@ -6,7 +6,7 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 12:05:26 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/16 15:09:37 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/16 18:28:04 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void				output_s(t_flags *flags, va_list argptr)
 	str = va_arg(argptr, char*);
 	if (str == NULL)
 		str = "(null)";
-	if (flags->precision_exsistence == 1)
+	if (flags->pre_exist == 1)
 		actual_strlen = MIN((int)ft_strlen(str), flags->precision);
 	else
 		actual_strlen = ft_strlen(str);

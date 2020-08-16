@@ -6,7 +6,7 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 12:03:28 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/16 14:10:27 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/16 18:28:59 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void				set_precision_asterisk
 	tmp_precision = va_arg(argptr, int);
 	if (tmp_precision < 0)
 	{
-		flags->precision_exsistence = 0;
+		flags->pre_exist = 0;
 	}
 	else
 	{

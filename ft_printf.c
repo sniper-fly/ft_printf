@@ -6,7 +6,7 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 10:23:55 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/15 18:12:34 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/16 18:26:39 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ static void	init_flags_except_total_len(t_flags *flags)
 	flags->fill_zero_flag = 0;
 	flags->minus_flag = 0;
 	flags->width = 0;
-	flags->precision_exsistence = 0;
+	flags->pre_exist = 0;
 	flags->precision = 0;
 }
 

@@ -6,7 +6,7 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 10:26:56 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/16 14:06:50 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/16 18:26:13 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct {
 	int		fill_zero_flag;
 	int		minus_flag;
 	int		width;
-	int		precision_exsistence;
+	int		pre_exist;
 	int		precision;
 	int		total_output_len;
 }					t_flags;
@@ -55,7 +55,7 @@ int					count_digits_int10(int num);
 int					count_digits_u_int10(unsigned int num);
 int					count_digits_u_int16base(unsigned int num);
 unsigned long		count_digits_u_long16base(unsigned long num);
-void				put_int10(int num, int precision);
+void				put_int10(int num, int pre_exists, int precision);
 void				put_u_int10(unsigned int num, int precision);
 void				put_u_int16base(unsigned int num, int precision, char *base);
 void				ft_putnbr_u(unsigned int num);
