@@ -6,7 +6,7 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 12:07:26 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/17 12:28:27 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/17 13:25:28 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,40 +31,40 @@ void				output_p(t_flags *flags, va_list argptr)
 		actual_numlen = 2;
 	actual_width = MAX(actual_numlen, flags->width);
 	flags->total_output_len += actual_width;
-	output_p2(flags, address, actual_numlen, actual_width, base);
+	output_p2(flags, address, actual_width - actual_numlen, base);
 }
 
 static void			output_p2(t_flags *flags, unsigned long address,
-						int actual_numlen, int actual_width, char *base)
+						int actual_width_minus_numlen, char *base)
 {
 	if (flags->minus_flag)
 	{
 		ft_putstr_fd("0x", 1);
 		put_u_long16base(address, flags->pre_exist, flags->precision, base);
-		put_it_xx_times(' ', actual_width - actual_numlen);
+		put_it_xx_times(' ', actual_width_minus_numlen);
 	}
 	else if (flags->fill_zero_flag)
 	{
 		if (flags->pre_exist == 1)
 		{
-			put_space_address(flags, address, actual_numlen,
-								actual_width, base);
+			put_space_address(flags, address,
+								actual_width_minus_numlen, base);
 		}
 		else
 		{
 			ft_putstr_fd("0x", 1);
-			put_it_xx_times(' ', actual_width - actual_numlen);
+			put_it_xx_times(' ', actual_width_minus_numlen);
 			ft_putnbr_u_long16base(address, base);
 		}
 	}
 	else
-		put_space_address(flags, address, actual_numlen, actual_width, base);
+		put_space_address(flags, address, actual_width_minus_numlen, base);
 }
 
 static void			put_space_address(t_flags *flags, unsigned long address,
-						int actual_numlen, int actual_width, char *base)
+						int actual_width_minus_numlen, char *base)
 {
-	put_it_xx_times(' ', actual_width - actual_numlen);
+	put_it_xx_times(' ', actual_width_minus_numlen);
 	ft_putstr_fd("0x", 1);
 	put_u_long16base(address, flags->pre_exist, flags->precision, base);
 }
