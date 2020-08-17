@@ -6,7 +6,7 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 12:07:20 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/16 18:29:39 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/16 18:50:40 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void				output_x(t_flags *flags, va_list argptr)
 
 	num = va_arg(argptr, unsigned int);
 	actual_numlen = MAX(count_digits_u_int16base(num), flags->precision);
+	if (num == 0 && flags->pre_exist == 1 && flags->precision == 0)
+		actual_numlen = 0;
 	actual_width = MAX(actual_numlen, flags->width);
 	flags->total_output_len += actual_width;
 	output_x2(flags, num, actual_numlen, actual_width);
@@ -35,7 +37,7 @@ static void			output_x2(t_flags *flags, unsigned int num,
 {
 	if (flags->minus_flag)
 	{
-		put_u_int16base(num, flags->precision, "0123456789abcdef");
+		put_u_int16base(num, flags->pre_exist, flags->precision, "0123456789abcdef");
 		put_it_xx_times(' ', actual_width - actual_numlen);
 	}
 	else if (flags->fill_zero_flag)
@@ -43,7 +45,7 @@ static void			output_x2(t_flags *flags, unsigned int num,
 		if (flags->pre_exist)
 		{
 			put_it_xx_times(' ', actual_width - actual_numlen);
-			put_u_int16base(num, flags->precision, "0123456789abcdef");
+			put_u_int16base(num, flags->pre_exist, flags->precision, "0123456789abcdef");
 		}
 		else
 		{
@@ -54,7 +56,7 @@ static void			output_x2(t_flags *flags, unsigned int num,
 	else
 	{
 		put_it_xx_times(' ', actual_width - actual_numlen);
-		put_u_int16base(num, flags->precision, "0123456789abcdef");
+		put_u_int16base(num, flags->pre_exist, flags->precision, "0123456789abcdef");
 	}
 }
 
@@ -66,6 +68,8 @@ void				output_X(t_flags *flags, va_list argptr)
 
 	num = va_arg(argptr, unsigned int);
 	actual_numlen = MAX(count_digits_u_int16base(num), flags->precision);
+	if (num == 0 && flags->pre_exist == 1 && flags->precision == 0)
+		actual_numlen = 0;
 	actual_width = MAX(actual_numlen, flags->width);
 	flags->total_output_len += actual_width;
 	output_X2(flags, num, actual_numlen, actual_width);
@@ -76,7 +80,7 @@ static void			output_X2(t_flags *flags, unsigned int num,
 {
 	if (flags->minus_flag)
 	{
-		put_u_int16base(num, flags->precision, "0123456789ABCDEF");
+		put_u_int16base(num, flags->pre_exist, flags->precision, "0123456789ABCDEF");
 		put_it_xx_times(' ', actual_width - actual_numlen);
 	}
 	else if (flags->fill_zero_flag)
@@ -84,7 +88,7 @@ static void			output_X2(t_flags *flags, unsigned int num,
 		if (flags->pre_exist)
 		{
 			put_it_xx_times(' ', actual_width - actual_numlen);
-			put_u_int16base(num, flags->precision, "0123456789ABCDEF");
+			put_u_int16base(num, flags->pre_exist, flags->precision, "0123456789ABCDEF");
 		}
 		else
 		{
@@ -95,6 +99,6 @@ static void			output_X2(t_flags *flags, unsigned int num,
 	else
 	{
 		put_it_xx_times(' ', actual_width - actual_numlen);
-		put_u_int16base(num, flags->precision, "0123456789ABCDEF");
+		put_u_int16base(num, flags->pre_exist, flags->precision, "0123456789ABCDEF");
 	}
 }

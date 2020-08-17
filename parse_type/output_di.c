@@ -6,7 +6,7 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 12:07:14 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/16 18:27:40 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/16 18:34:21 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,9 @@ void				output_di(t_flags *flags, va_list argptr)
 	actual_numlen = MAX(count_digits_int10(num), flags->precision);
 	if (num == 0 && flags->pre_exist == 1 && flags->precision == 0)
 		actual_numlen = 0;
-	if (num < 0) // マイナス記号が入るため
-		actual_numlen++;
+	actual_numlen += (num < 0) ? 1 : 0;
+	// if (num < 0) // マイナス記号が入るため
+	// 	actual_numlen++;
 	actual_width = MAX(actual_numlen, flags->width);
 	flags->total_output_len += actual_width;
 	if (flags->minus_flag == 1)

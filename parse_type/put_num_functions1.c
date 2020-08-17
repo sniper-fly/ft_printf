@@ -6,16 +6,16 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/15 12:07:46 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/16 18:12:06 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/16 18:48:14 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 #include <limits.h>
 
-void		put_int10(int num, int pre_exists, int precision)
+void		put_int10(int num, int pre_exist, int precision)
 {
-	if (num == 0 && pre_exists == 1 && precision == 0)
+	if (num == 0 && pre_exist == 1 && precision == 0)
 		return ;
 	if (num < 0)
 		write(1, "-", 1);
@@ -46,8 +46,10 @@ void	ft_putnbr_u(unsigned int num)
 	}
 }
 
-void		put_u_int10(unsigned int num, int precision)
+void		put_u_int10(unsigned int num, int pre_exist, int precision)
 {
+	if (num == 0 && pre_exist == 1 && precision == 0)
+		return ;
 	put_it_xx_times('0', precision - count_digits_u_int10(num));
 	ft_putnbr_u(num);
 }
@@ -66,8 +68,11 @@ void	ft_putnbr_u_16base(unsigned int num, char *base)
 	}
 }
 
-void		put_u_int16base(unsigned int num, int precision, char *base)
+void		put_u_int16base(unsigned int num, int pre_exist,
+								int precision, char *base)
 {
+	if (num == 0 && pre_exist == 1 && precision == 0)
+		return ;
 	put_it_xx_times('0', precision - count_digits_u_int16base(num));
 	ft_putnbr_u_16base(num, base);
 }
