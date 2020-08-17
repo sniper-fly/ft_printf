@@ -6,7 +6,7 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/29 18:21:05 by rnakai            #+#    #+#             */
-/*   Updated: 2020/07/14 17:16:35 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/17 12:01:19 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,3 @@ void		*ft_memcpy(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
-
-// #include <stdio.h>
-// #include <string.h>
-// int		main(void)
-// {
-// 	char *	hoge = NULL;
-// 	char *ahoge = NULL;
-// 	// printf("%p", memcpy(hoge, ahoge, 0));
-// 	// printf("%p", ft_memcpy(hoge, ahoge, 0));
-// 	printf("\n");
-// 	return (0);
-// }

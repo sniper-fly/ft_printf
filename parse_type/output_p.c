@@ -6,12 +6,12 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 12:07:26 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/17 11:48:59 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/17 12:28:27 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-#define OUTPUT_P
+#define OUTPUT_P_C
 #include "sequel_funcs.h"
 
 void				output_p(t_flags *flags, va_list argptr)
@@ -26,7 +26,7 @@ void				output_p(t_flags *flags, va_list argptr)
 	ptr = va_arg(argptr, void*);
 	address = (unsigned long)ptr;
 	actual_numlen = MAX(count_digits_u_long16base(address), flags->precision);
-	actual_numlen += 2; //0xの分を足す
+	actual_numlen += 2;
 	if (address == 0 && flags->pre_exist == 1 && flags->precision == 0)
 		actual_numlen = 2;
 	actual_width = MAX(actual_numlen, flags->width);
@@ -46,12 +46,10 @@ static void			output_p2(t_flags *flags, unsigned long address,
 	else if (flags->fill_zero_flag)
 	{
 		if (flags->pre_exist == 1)
-			put_space_address(flags, address, actual_numlen, actual_width, base);
-		// {
-		// 	put_it_xx_times(' ', actual_width - actual_numlen);
-		// 	ft_putstr_fd("0x", 1);
-		// 	put_u_long16base(address, flags->pre_exist, flags->precision, base);
-		// }
+		{
+			put_space_address(flags, address, actual_numlen,
+								actual_width, base);
+		}
 		else
 		{
 			ft_putstr_fd("0x", 1);
@@ -61,11 +59,6 @@ static void			output_p2(t_flags *flags, unsigned long address,
 	}
 	else
 		put_space_address(flags, address, actual_numlen, actual_width, base);
-	// {
-	// 	put_it_xx_times(' ', actual_width - actual_numlen);
-	// 	ft_putstr_fd("0x", 1);
-	// 	put_u_long16base(address, flags->pre_exist, flags->precision, base);
-	// }
 }
 
 static void			put_space_address(t_flags *flags, unsigned long address,

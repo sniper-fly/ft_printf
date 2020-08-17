@@ -6,18 +6,12 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 10:23:55 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/16 18:26:39 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/17 12:10:38 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//1文字ずつ画面に出力し、%が来たらフォーマットを解析する
-
+#define FT_PRINTF_C
 #include "ft_printf.h"
-
-static void	init_flags_except_total_len(t_flags *flags);
-static int	is_from0to9(char num);
-static int	is_from1to9(char num);
-static void	parse_fmt(t_flags *flags, const char **fmt, va_list argptr);
 
 int			ft_printf(const char *fmt, ...)
 {
@@ -64,7 +58,6 @@ static void	parse_fmt(t_flags *flags, const char **fmt, va_list argptr)
 	parse_type(flags, fmt, argptr);
 }
 
-//total_output_length以外を0で初期化する
 static void	init_flags_except_total_len(t_flags *flags)
 {
 	flags->fill_zero_flag = 0;

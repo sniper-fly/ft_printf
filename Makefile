@@ -47,7 +47,7 @@ SRCS	=	./libft/ft_isdigit.c \
 			./parse_type/output_di.c \
 			./parse_type/output_u.c \
 			./parse_type/output_percent.c \
-			./parse_type/output_xX.c \
+			./parse_type/output_x.c \
 			./parse_type/parse_type.c \
 			./parse_type/put_it_xx_times.c \
 			./parse_type/output_p.c \

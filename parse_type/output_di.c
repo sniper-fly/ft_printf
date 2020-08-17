@@ -6,12 +6,12 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 12:07:14 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/17 11:48:49 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/17 12:36:14 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-#define OUTPUT_D
+#define OUTPUT_DI_C
 #include "sequel_funcs.h"
 #include <limits.h>
 
@@ -26,8 +26,6 @@ void				output_di(t_flags *flags, va_list argptr)
 	if (num == 0 && flags->pre_exist == 1 && flags->precision == 0)
 		actual_numlen = 0;
 	actual_numlen += (num < 0) ? 1 : 0;
-	// if (num < 0) // マイナス記号が入るため
-	// 	actual_numlen++;
 	actual_width = MAX(actual_numlen, flags->width);
 	flags->total_output_len += actual_width;
 	if (flags->minus_flag == 1)

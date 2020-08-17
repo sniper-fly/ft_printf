@@ -6,7 +6,7 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/16 13:51:29 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/17 10:53:29 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/17 12:16:02 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_putnbr_u_long16base(unsigned long num, char *base)
 	}
 }
 
-void		put_u_long16base(unsigned long num, int pre_exist,
+void	put_u_long16base(unsigned long num, int pre_exist,
 								int precision, char *base)
 {
 	if (num == 0 && pre_exist == 1 && precision == 0)

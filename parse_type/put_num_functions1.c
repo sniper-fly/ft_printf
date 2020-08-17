@@ -6,14 +6,14 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/15 12:07:46 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/16 18:48:14 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/17 12:14:20 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 #include <limits.h>
 
-void		put_int10(int num, int pre_exist, int precision)
+void	put_int10(int num, int pre_exist, int precision)
 {
 	if (num == 0 && pre_exist == 1 && precision == 0)
 		return ;
@@ -46,7 +46,7 @@ void	ft_putnbr_u(unsigned int num)
 	}
 }
 
-void		put_u_int10(unsigned int num, int pre_exist, int precision)
+void	put_u_int10(unsigned int num, int pre_exist, int precision)
 {
 	if (num == 0 && pre_exist == 1 && precision == 0)
 		return ;
@@ -58,7 +58,6 @@ void	ft_putnbr_u_16base(unsigned int num, char *base)
 {
 	if (num < 16)
 	{
-		//"01234567890abcdef"[10] = a
 		ft_putchar_fd(base[num], 1);
 	}
 	else
@@ -68,7 +67,7 @@ void	ft_putnbr_u_16base(unsigned int num, char *base)
 	}
 }
 
-void		put_u_int16base(unsigned int num, int pre_exist,
+void	put_u_int16base(unsigned int num, int pre_exist,
 								int precision, char *base)
 {
 	if (num == 0 && pre_exist == 1 && precision == 0)

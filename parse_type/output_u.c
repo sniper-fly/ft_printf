@@ -6,12 +6,12 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 12:07:23 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/17 11:49:13 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/17 12:29:09 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-#define OUTPUT_U
+#define OUTPUT_U_C
 #include "sequel_funcs.h"
 
 void				output_u(t_flags *flags, va_list argptr)
