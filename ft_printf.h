@@ -6,7 +6,7 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 10:26:56 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/16 18:44:27 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/17 10:54:15 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ void				put_int10(int num, int pre_exists, int precision);
 void				put_u_int10(unsigned int num, int pre_exist, int precision);
 void				put_u_int16base
 					(unsigned int num, int pre_exist, int precision, char *base);
+void				put_u_long16base(unsigned long num, int pre_exist,
+								int precision, char *base);
 void				ft_putnbr_u(unsigned int num);
 void				ft_putnbr_u_16base(unsigned int num, char *base);
 void				ft_putnbr_u_long16base(unsigned long num, char *base);
