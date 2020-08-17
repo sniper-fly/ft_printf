@@ -6,14 +6,13 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 12:07:23 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/16 18:40:04 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/17 11:49:13 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-
-static void			output_u2(t_flags *flags, unsigned int num,
-						int actual_numlen, int actual_width);
+#define OUTPUT_U
+#include "sequel_funcs.h"
 
 void				output_u(t_flags *flags, va_list argptr)
 {

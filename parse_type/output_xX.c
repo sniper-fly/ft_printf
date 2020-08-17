@@ -6,16 +6,13 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 12:07:20 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/16 18:50:40 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/17 11:52:40 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-
-static void			output_x2(t_flags *flags, unsigned int num,
-						int actual_numlen, int actual_width);
-static void			output_X2(t_flags *flags, unsigned int num,
-						int actual_numlen, int actual_width);
+#define OUTPUT_X
+#include "sequel_funcs.h"
 
 void				output_x(t_flags *flags, va_list argptr)
 {

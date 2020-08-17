@@ -6,14 +6,13 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 12:05:26 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/17 10:45:46 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/17 11:49:06 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-
-static void			output_s2(t_flags *flags, int actual_strlen,
-								int actual_width, char *str);
+#define OUTPUT_S
+#include "sequel_funcs.h"
 
 void				output_s(t_flags *flags, va_list argptr)
 {
