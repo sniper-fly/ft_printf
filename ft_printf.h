@@ -6,7 +6,7 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 10:26:56 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/17 10:54:15 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/17 11:13:58 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void				put_it_xx_times(char ch, int times);
 int					count_digits_int10(int num);
 int					count_digits_u_int10(unsigned int num);
 int					count_digits_u_int16base(unsigned int num);
-unsigned long		count_digits_u_long16base(unsigned long num);
+int					count_digits_u_long16base(unsigned long num);
 void				put_int10(int num, int pre_exists, int precision);
 void				put_u_int10(unsigned int num, int pre_exist, int precision);
 void				put_u_int16base
