@@ -6,14 +6,14 @@
 /*   By: rnakai <rnakai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 12:07:14 by rnakai            #+#    #+#             */
-/*   Updated: 2020/08/16 18:34:21 by rnakai           ###   ########.fr       */
+/*   Updated: 2020/08/17 10:38:24 by rnakai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 #include <limits.h>
 
-static void			output_di_sequel(t_flags *flags, int num,
+static void			output_di2(t_flags *flags, int num,
 						int actual_numlen, int actual_width);
 
 void				output_di(t_flags *flags, va_list argptr)
@@ -47,7 +47,7 @@ void				output_di(t_flags *flags, va_list argptr)
 	}
 }
 
-static void			output_di_sequel(t_flags *flags, int num,
+static void			output_di2(t_flags *flags, int num,
 						int actual_numlen, int actual_width)
 {
 	if (flags->pre_exist)
